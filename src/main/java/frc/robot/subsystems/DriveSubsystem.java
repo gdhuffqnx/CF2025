@@ -15,8 +15,6 @@ import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import com.studica.frc.AHRS;
-import com.studica.frc.jni.AHRSJNI;
-import edu.wpi.first.wpilibj.SPI;
 import frc.robot.Constants.DriveConstants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
