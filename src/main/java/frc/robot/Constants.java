@@ -45,17 +45,17 @@ public final class Constants {
     public static final double kBackLeftChassisAngularOffset = Math.PI;
     public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
-    public static final int kFrontLeftDrivingCanId = 8;
-    public static final int kFrontLeftTurningCanId = 9;
+    public static final int kFrontLeftDrivingCanId = 8; // 8
+    public static final int kFrontLeftTurningCanId = 9; // 9
 
-    public static final int kFrontRightDrivingCanId = 2;
-    public static final int kFrontRightTurningCanId = 3;
+    public static final int kFrontRightDrivingCanId = 2; // 2
+    public static final int kFrontRightTurningCanId = 3; // 3
 
-    public static final int kRearLeftDrivingCanId = 6;
-    public static final int kRearLeftTurningCanId = 7;
+    public static final int kRearLeftDrivingCanId = 6; // 6
+    public static final int kRearLeftTurningCanId = 7; // 7
 
-    public static final int kRearRightDrivingCanId = 4;
-    public static final int kRearRightTurningCanId = 5;
+    public static final int kRearRightDrivingCanId = 4; // 4
+    public static final int kRearRightTurningCanId = 5; // 5
 
     public static final boolean kGyroReversed = false;
   }
