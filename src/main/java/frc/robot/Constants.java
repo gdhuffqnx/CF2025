@@ -57,6 +57,7 @@ public final class Constants {
     public static final int kFrontRightTurningCanId = 9;
     public static final int kRearRightTurningCanId = 3;
 
+
     public static final boolean kGyroReversed = true;
   }
 
@@ -95,6 +96,10 @@ public final class Constants {
     // Constraint for the motion profiled robot angle controller
     public static final TrapezoidProfile.Constraints kThetaControllerConstraints = new TrapezoidProfile.Constraints(
         kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
+  }
+
+  public static final class ArmConstants {
+    public static final int kArmExtendCanId = 12;
   }
 
   public static final class NeoMotorConstants {
