@@ -12,7 +12,7 @@ public class armExtend extends SubsystemBase {
     private final SparkMax m_armExtend;
 
     public armExtend() {
-        m_armExtend = new SparkMax(ArmConstants.kArmExtendCanId, MotorType.kBrushless); // 
+        m_armExtend = new SparkMax(ArmConstants.kArmExtendCanId, MotorType.kBrushless);
     }
 
     public void moveArm(double speed) {
