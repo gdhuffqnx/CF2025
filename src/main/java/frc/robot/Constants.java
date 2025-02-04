@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import com.studica.frc.AHRS;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
@@ -57,7 +58,10 @@ public final class Constants {
     public static final int kRearRightDrivingCanId = 4; // 4
     public static final int kRearRightTurningCanId = 5; // 5
 
-    public static final boolean kGyroReversed = false;
+    public static final boolean kGyroReversed = true;
+
+    // The gyro sensor
+    public static final AHRS m_gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
   }
 
   public static final class ModuleConstants {
