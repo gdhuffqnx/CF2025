@@ -19,11 +19,14 @@ import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.Telemetrysubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import java.util.List;
+import frc.robot.subsystems.armExtend;
+import frc.robot.commands.raiseArm;
 
 /*
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -33,7 +36,9 @@ import java.util.List;
  */
 public class RobotContainer {
   // The robot's subsystems
-  private final DriveSubsystem m_robotDrive = new DriveSubsystem();
+  public static final DriveSubsystem m_robotDrive = new DriveSubsystem();
+  public static final Telemetrysubsystem m_telemetry = new Telemetrysubsystem();
+  private final armExtend m_armExtend = new armExtend();
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
@@ -42,8 +47,12 @@ public class RobotContainer {
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
+    //armExtend = new armExtend(); 
+    
     // Configure the button bindings
     configureButtonBindings();
+
+
 
     // Configure default commands
     m_robotDrive.setDefaultCommand(
@@ -57,6 +66,8 @@ public class RobotContainer {
                 -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband),
                 true),
             m_robotDrive));
+    
+    m_telemetry.ConfigureDashboard();
   }
 
   /**
@@ -73,6 +84,8 @@ public class RobotContainer {
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));
+    new JoystickButton(m_driverController, Button.kL1.value)
+        .whileTrue(new raiseArm(m_armExtend,1.0));
   }
 
   /**
