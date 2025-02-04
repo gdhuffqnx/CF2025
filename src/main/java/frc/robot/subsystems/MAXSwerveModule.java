@@ -85,7 +85,6 @@ public class MAXSwerveModule {
         m_drivingEncoder.getPosition(),
         new Rotation2d(m_turningEncoder.getPosition() - m_chassisAngularOffset));
   }
-
   /**
    * Sets the desired state for the module.
    *
@@ -105,6 +104,35 @@ public class MAXSwerveModule {
     m_turningClosedLoopController.setReference(correctedDesiredState.angle.getRadians(), ControlType.kPosition);
 
     m_desiredState = desiredState;
+  }
+
+/**
+   * Sets the desired state for the module.
+   *
+   * @param joyx X from drivercontroller
+   * @param joyY Y from drivercontroller
+   */
+
+  public static final Double desiredAngle(double joyX, double joyY){
+    if ((joyX > 0.1)&&(joyY < -0.1)) {
+      return(-57.3*Math.atan(Math.abs(joyX/joyY)));
+   } else if ((joyX > 0.1)&&(Math.abs(joyY) < 0.1)) {
+      return (double) (-90);
+   } else if ((joyX < -0.1)&&(Math.abs(joyY) < 0.1)) {
+      return (double) (90);
+   } else if ((Math.abs(joyX) < 0.1)&&(joyY < -0.1)) {
+      return (double) (0.1);
+   } else if ((Math.abs(joyX) < 0.1)&&(joyY > 0.1)) {
+      return (double) (180);
+   } else if ((joyX > 0.1)&&(joyY > 0.1)) {
+      return(-180+57.3*Math.atan(Math.abs(joyX/joyY)));
+   } else if ((joyX < -0.1)&&(joyY < -0.1)) {
+      return(57.3*Math.atan(Math.abs(joyX/joyY)));
+   } else if ((joyX < -0.1)&&(joyY > 0.1)) {
+      return(180-57.3*Math.atan(Math.abs(joyX/joyY)));
+   }else {
+    return (null);
+   }
   }
 
   /** Zeroes all the SwerveModule encoders. */
