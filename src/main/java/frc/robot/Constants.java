@@ -46,6 +46,7 @@ public final class Constants {
     public static final double kBackLeftChassisAngularOffset = Math.PI;
     public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
+    // CAN IDS
     public static final int kFrontLeftDrivingCanId = 8; // 8
     public static final int kFrontLeftTurningCanId = 9; // 9
 
