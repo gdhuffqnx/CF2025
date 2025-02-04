@@ -104,7 +104,15 @@ public final class Constants {
   }
 
   public static final class ArmConstants {
-    public static final int kArmExtendCanId = 12;
+    public static final int kArmExtendCanId = 10;
+    public static final int kArmAngleCanId = 11;
+
+    public static final int AlgaeExtenderCanId = 12;
+    public static final int AlgaeCollectorCanId = 13;
+
+    public static final int CoralCollectorCanId = 14;
+
+    public static final int HarpoonCanId = 15;
   }
 
   public static final class NeoMotorConstants {
