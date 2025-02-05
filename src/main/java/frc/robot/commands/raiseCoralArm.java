@@ -1,15 +1,15 @@
 package frc.robot.commands;
 
-import frc.robot.subsystems.armExtend;
+import frc.robot.subsystems.CoralArmExtend;
 import edu.wpi.first.wpilibj2.command.Command;
 
 
-public class raiseArm extends Command {
-    private final armExtend armSubsystem;
+public class raiseCoralArm extends Command {
+    private final CoralArmExtend armSubsystem;
 
     private final double speed;
 
-    public raiseArm(armExtend armSubsystem, double speed) {
+    public raiseCoralArm(CoralArmExtend armSubsystem, double speed) {
         this.armSubsystem = armSubsystem;
         this.speed = speed;
         addRequirements(armSubsystem); // Ensures that the arm subsystem is required for this command
