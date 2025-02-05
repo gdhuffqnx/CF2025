@@ -25,8 +25,8 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import java.util.List;
-import frc.robot.subsystems.armExtend;
-import frc.robot.commands.raiseArm;
+import frc.robot.subsystems.CoralArmExtend;
+import frc.robot.commands.raiseCoralArm;
 
 /*
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -38,7 +38,7 @@ public class RobotContainer {
   // The robot's subsystems
   public static final DriveSubsystem m_robotDrive = new DriveSubsystem();
   public static final Telemetrysubsystem m_telemetry = new Telemetrysubsystem();
-  private final armExtend m_armExtend = new armExtend();
+  private final CoralArmExtend m_CoralArmExtend = new CoralArmExtend();
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
@@ -84,7 +84,7 @@ public class RobotContainer {
             () -> m_robotDrive.setX(),
             m_robotDrive));
     new JoystickButton(m_driverController, Button.kL1.value)
-        .whileTrue(new raiseArm(m_armExtend,1.0));
+        .whileTrue(new raiseCoralArm(m_CoralArmExtend,1.0));
   }
 
   /**
