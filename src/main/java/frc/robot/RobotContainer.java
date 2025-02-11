@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import java.util.List;
-import frc.robot.subsystems.CoralArmExtend;
+import frc.robot.subsystems.CoralArmSubsystem;
 import frc.robot.commands.raiseCoralArm;
 
 /*
@@ -38,7 +38,7 @@ public class RobotContainer {
   // The robot's subsystems
   public static final DriveSubsystem m_robotDrive = new DriveSubsystem();
   public static final Telemetrysubsystem m_telemetry = new Telemetrysubsystem();
-  private final CoralArmExtend m_CoralArmExtend = new CoralArmExtend();
+  private static final CoralArmSubsystem m_CoralArmExtend = new CoralArmSubsystem();
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);

@@ -7,11 +7,11 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ArmConstants;
 
-public class CoralArmExtend extends SubsystemBase {
+public class CoralArmSubsystem extends SubsystemBase {
 
     private final SparkMax m_armExtend;
 
-    public CoralArmExtend() {
+    public CoralArmSubsystem() {
         m_armExtend = new SparkMax(ArmConstants.kCoralExtendCanId, MotorType.kBrushless);
     }
 
